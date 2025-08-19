@@ -1,0 +1,45 @@
+
+
+body {
+    margin: 0; 
+    background: #f0f0f0;
+    color: #0b2240; 
+    font: 16px system-ui, sans-serif;
+
+}
+
+.behallare { 
+    max-width: 70rem; 
+    margin: 0 auto;
+    padding: 1rem;
+
+}
+
+header {
+    background: #f4f6fb; 
+    border-bottom: 1px solid #dcdcdc;
+
+}
+
+header h1 { 
+    font-size: 28px; margin: 8px 0; 
+}
+header p {
+     color: #364764; margin: 0 0 12px; 
+}
+
+section {
+    display: grid; 
+    gap: 12px; 
+    margin: 16px 0 40px; 
+}
+
+
+.innehall {
+    max-height: 0; 
+    overflow: hidden; 
+    opacity: 0; 
+    color:#0b2240; 
+    padding: 0 16px;
+    
+}
