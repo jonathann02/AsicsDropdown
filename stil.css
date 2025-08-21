@@ -28,29 +28,36 @@ header p {
      color: #364764; margin: 0 0 12px; 
 }
 
-section {
+
+
+.produktinformation {
     display: grid; 
     gap: 12px; 
     margin: 16px 0 40px; 
 }
 
-
 .innehall {
     max-height: 0; 
     overflow: hidden; 
     opacity: 0; 
-    color:#0b2240; 
+    transition: max-height 1s ease, opacity 1s ease, padding 1s ease;
     padding: 0 16px;
-    transition: max-height 1.5s ease, opacity 1.5 ease, padding 1.5 ease;  
-    
 }
 
-.detaljer {
-    border: 1px solid #d7deea; 
-    border-radius: 10px; 
-    background: #fff; 
-    
+.del[open] .innehall {
+    max-height: 1000px; 
+    opacity: 1; 
+    padding: 16px;
 }
+
+@starting-style {
+    .del[open] .innehall {
+        max-height: 0; 
+        opacity: 0; 
+        padding: 0 16px; 
+    }
+}
+
 
 .rubrik {
     display: flex; 
@@ -69,12 +76,6 @@ section {
     margin: 0; 
     font-size: 20px; 
     flex: 1; 
-}
-
-.detaljer[open] .innehall {
-    opacity: 2; 
-    max-height: 1000px;
-    padding: 16px;
 }
 
 .ikon { position: relative; width: 20px; height: 20px; color:#000611; }
@@ -101,7 +102,42 @@ section {
     transform: translate(-50%, -50%) scaleY(1); 
 }
 
-.detaljer[open] .ikon::after {
+.del[open] .ikon::after {
     transform: translate(-50%, -50%) scaleY(0); opacity: 0; 
 }
 
+.kol-2 { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 24px; }
+@media (max-width: 640px) { .kol-2 { grid-template-columns: 1fr; } }
+
+.radlista .rad {
+    display: grid; grid-template-columns: 140px 1fr; 
+    gap: 10px; padding: 6px 0; border-bottom: 1px solid #dcdcdc;
+}
+
+.radlista .rad:last-child {
+    border-bottom: none; 
+}
+
+.lista {
+    margin: 12px 0 0; 
+    padding-left: 2rem; 
+    
+    }
+
+.lista-2kol {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px 14px; list-style: disc; padding-left: 1.5rem; margin: 0; 
+}
+
+@media (max-width: 640px) { .lista-2kol { grid-template-columns: 1fr; } }
+
+.matare .post { margin-bottom: 12px; }
+.matare .info { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 14px; }
+.stapel { height: 8px; background: #f8f8f8; border-radius: 999px; overflow: hidden; }
+.stapel > span { display: block; height: 100%; background: #162d4b; border-radius: inherit; }
+
+.bild { width: 100%; height: auto; border-radius: 8px; display: block; }
